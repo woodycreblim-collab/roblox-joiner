@@ -1,7 +1,0 @@
-﻿{
-  "functions": {
-    "api/join.js": {
-      "runtime": "nodejs18.x"
-    }
-  }
-}

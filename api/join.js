@@ -5,7 +5,7 @@ export default function handler(req, res) {
     return res.status(400).json({ error: "Missing parameters" });
   }
   
-  const robloxUrl = `roblox://game/join?placeId=${placeId}&gameInstanceId=${gameInstanceId}`;
+  const robloxUrl = `roblox://placelaunchtime?placeId=${placeId}&instanceId=${gameInstanceId}`;
   
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -116,16 +116,9 @@ export default function handler(req, res) {
       window.location.href = '${robloxUrl}';
     }
     
-    // Lance immédiatement
     launch();
-    
-    // Réessaie après 1 seconde
     setTimeout(launch, 1000);
-    
-    // Réessaie après 2 secondes
     setTimeout(launch, 2000);
-    
-    // Réessaie après 3 secondes
     setTimeout(launch, 3000);
   </script>
 </body>
